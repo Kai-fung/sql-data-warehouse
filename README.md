@@ -1,5 +1,4 @@
 # Sales Data Warehouse Project
-A data warehouse including ETL processes, data modeling, and analytics.
 
 ## Overview
 
@@ -18,49 +17,6 @@ The main objective of this project is to develop a modern data warehouse that:
 - Integrates source data into a single, user-friendly analytical model
 - Supports reporting and business intelligence use cases
 - Provides clear and accessible documentation for both technical and business users
-
----
-
-## Data Sources
-
-The warehouse combines data from two operational source systems:
-
-### CRM
-
-- **`crm_sales_details`**  
-    Transactional sales and order records  
-    Key fields include:
-    
-    - `prd_key`
-    - `cst_id`
-- **`crm_prd_info`**  
-    Current and historical product information  
-    Key field:
-    
-    - `prd_key`
-- **`crm_cust_info`**  
-    Customer master information  
-    Key field:
-    
-    - `cst_id`
-
-### ERP
-
-- **`erp_px_cat_g1v2`**  
-    Product category information  
-    Key field:
-    
-    - `id`
-- **`erp_cust_az12`**  
-    Additional customer attributes such as birthdate  
-    Key field:
-    
-    - `cid`
-- **`erp_loc_a101`**  
-    Customer location information such as country  
-    Key field:
-    
-    - `cid`
 
 ---
 
@@ -125,14 +81,6 @@ The project uses a layered transformation approach:
 1. **Ingest** raw CSV data from ERP and CRM into the **Bronze** layer
 2. **Clean and standardize** the data in the **Silver** layer
 3. **Integrate and model** the data in the **Gold** layer for analytics
-
-### Key Data Processing Tasks
-
-- Handle missing or invalid values
-- Standardize formats and naming conventions
-- Normalize customer and product attributes
-- Derive calculated fields such as sales amount
-- Join CRM and ERP entities into conformed analytical objects
 
 ---
 
